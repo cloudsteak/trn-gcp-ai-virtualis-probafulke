@@ -11,8 +11,10 @@
 
     <!-- A JavaScript kód a backend API hívásához  -->
     <script>
+        // A backend API URL-je
         const API_URL = "http://localhost:8000";
 
+        // A backend állapotának lekérdezése
         async function getHealthStatus() {
             try {
                 const response = await fetch(`${API_URL}/health`);
