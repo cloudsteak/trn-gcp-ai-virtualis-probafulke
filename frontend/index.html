@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtuális Próbafülke</title>
+  </head>
+  <body>
+    <h1>Virtuális Próbafülke</h1>
+    <div id="api_valasz"></div>
+
+    <!-- A JavaScript kód a backend API hívásához  -->
+    <script>
+        const API_URL = "http://localhost:8000";
+
+        async function getHealthStatus() {
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                const data = await response.json();
+                document.getElementById("api_valasz").innerText = `Backend állapota: ${data.status}`;
+            } 
+            catch (error) {
+                console.error("Hiba a backend elérésében:", error);
+                document.getElementById("api_valasz").innerText = "Hiba a backend elérésében. Ellenőrizd, hogy a szerver fut-e.";
+            }
+        }
+
+        // Oldal betöltésekor hívjuk meg a getHealthStatus függvényt
+        window.onload = getHealthStatus;
+    </script>
+  </body>
+</html>
