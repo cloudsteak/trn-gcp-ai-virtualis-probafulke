@@ -10,7 +10,10 @@ Az egyes demók fázisnonként jelennek meg és külön branch-ekben és tag-ekb
 
 - `main`: A fő branch, amely a legfrissebb, teljes megoldást tartalmazza.
 - `demo/1-backend-api`: Az első demó, amely a backend API alapjait mutatja be. Itt egy Python alapú FastAPI szerver kerül implementálásra. Ehhez tartozó tag: `1-backend-api`.
+- `demo/2-frontend`: A második demó, amely a frontend integrációt mutatja be. Itt a frontend és a backend közötti kommunikáció kerül implementálásra. Ehhez tartozó tag: `2-frontend`.
 
 ## Fejlesztési lépések
 
 1. **Backend API**: A backend implementálása FastAPI segítségével, amely egy egyszerű API-t biztosít számunkra. Részletek a [1-backend-api.md](docs/1-backend-api.md) fájlban találhatók.
+
+2. **Frontend**: A frontend implementálása egy egyszerű html fájl formájában történik, amely a backend API-t használja a felhasználói interakciókhoz. Részletek a [2-frontend.md](docs/2-frontend.md) fájlban találhatók.
