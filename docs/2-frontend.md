@@ -43,7 +43,9 @@ Mac/Linux:
 
 ```bash
 cd frontend
-open index.html
+open frontend/index.html        # macOS
+xdg-open frontend/index.html    # Linux
+start frontend/index.html       # Windows
 ```
 
 3. **Backend API hívás implementálása**: A frontend és a backend közötti kommunikációt JavaScript segítségével valósítjuk meg. A `index.html` fájlban adj hozzá egy `<div>` elemet a fejléc alá, majd egy `<script>` szekciót a `<body>` végéhez, amely tartalmazza a backend API hívását.
