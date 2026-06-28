@@ -9,10 +9,42 @@
     <h1>Virtuális Próbafülke</h1>
     <div id="api_valasz"></div>
 
+    <!-- Képek feltöltése és eredmény megjelenítése -->
+    <form id="virtual_try_on_form">
+        <label for="model_image">Modell kép:</label>
+        <input type="file" id="model_image" name="model_image" accept="image/*" required>
+        <label for="clothing_image">Ruhadarab kép:</label>
+        <input type="file" id="clothing_image" name="clothing_image" accept="image/*" required>
+        <button type="submit">Próbafülke indítása</button>
+    </form>
+    <img id="result_image" alt="Eredmény" style="display:none; max-width: 800px;">
+
     <!-- A JavaScript kód a backend API hívásához  -->
     <script>
         // A backend API URL-je
         const API_URL = "http://localhost:8000";
+
+        // A form elküldésekor hívjuk meg a backend API-t a feltöltött képekkel
+        document.getElementById("virtual_try_on_form").onsubmit = async function (e) {
+            try {
+                // Megakadályozzuk az alapértelmezett form elküldést
+                e.preventDefault();
+                // Létrehozunk egy FormData objektumot a képek feltöltéséhez
+                const formData = new FormData();
+                // Hozzáadjuk a feltöltött képeket a FormData-hoz
+                formData.append("model_image", document.getElementById("model_image").files[0]);
+                formData.append("clothing_image", document.getElementById("clothing_image").files[0]);
+                // Meghívjuk a backend API-t a POST kéréssel
+                const response = await fetch(API_URL + "/virtual-try-on", { method: "POST", body: formData });
+                // Ellenőrizzük, hogy a válasz sikeres-e
+                document.getElementById("result_image").src = URL.createObjectURL(await response.blob());
+                // Megjelenítjük az eredmény képet
+                document.getElementById("result_image").style.display = "block";
+            } catch (error) {
+                console.error("Hiba a próbafülke indításakor:", error);
+                document.getElementById("api_valasz").innerText = "Hiba a próbafülke indításakor. Ellenőrizd, hogy a szerver fut-e.";
+            }
+        };
 
         // A backend állapotának lekérdezése
         async function getHealthStatus() {
