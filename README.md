@@ -9,3 +9,8 @@ Az egyes demók fázisnonként jelennek meg és külön branch-ekben és tag-ekb
 ## Branch-ek és tag-ek
 
 - `main`: A fő branch, amely a legfrissebb, teljes megoldást tartalmazza.
+- `demo/1-backend-api`: Az első demó, amely a backend API alapjait mutatja be. Itt egy Python alapú FastAPI szerver kerül implementálásra. Ehhez tartozó tag: `1-backend-api`.
+
+## Fejlesztési lépések
+
+1. **Backend API**: A backend implementálása FastAPI segítségével, amely egy egyszerű API-t biztosít számunkra. Részletek a [1-backend-api.md](docs/1-backend-api.md) fájlban találhatók.
