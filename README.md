@@ -11,9 +11,12 @@ Az egyes demók fázisnonként jelennek meg és külön branch-ekben és tag-ekb
 - `main`: A fő branch, amely a legfrissebb, teljes megoldást tartalmazza.
 - `demo/1-backend-api`: Az első demó, amely a backend API alapjait mutatja be. Itt egy Python alapú FastAPI szerver kerül implementálásra. Ehhez tartozó tag: `1-backend-api`.
 - `demo/2-frontend`: A második demó, amely a frontend integrációt mutatja be. Itt a frontend és a backend közötti kommunikáció kerül implementálásra. Ehhez tartozó tag: `2-frontend`.
+- `demo/3-backend-virtual-try-on`: A harmadik demó, amely a virtuális próbafülke backend logikáját mutatja be. Itt a ruhák illeszkedésének és megjelenésének feldolgozása kerül implementálásra. Itt kötjük össze a backend-et a Google Cloud AI szolgáltatásaival. (Enterprise Agent Platform) Ehhez tartozó tag: `3-backend-virtual-try-on`.
 
 ## Fejlesztési lépések
 
 1. **Backend API**: A backend implementálása FastAPI segítségével, amely egy egyszerű API-t biztosít számunkra. Részletek a [1-backend-api.md](docs/1-backend-api.md) fájlban találhatók.
 
 2. **Frontend**: A frontend implementálása egy egyszerű html fájl formájában történik, amely a backend API-t használja a felhasználói interakciókhoz. Részletek a [2-frontend.md](docs/2-frontend.md) fájlban találhatók.
+
+3. **Backend Virtual Try-On**: A virtuális próbafülke backend logikájának implementálása, amely a ruhák illeszkedését és megjelenését kezeli. Részletek a [3-backend-virtual-try-on.md](docs/3-backend-virtual-try-on.md) fájlban találhatók.

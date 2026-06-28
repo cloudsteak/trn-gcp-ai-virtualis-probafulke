@@ -62,7 +62,9 @@ def read_health():
 python -m uvicorn main:app --reload --port 8000
 ```
 
-Ezután nyisd meg a böngészőt, és látogasd meg a `http://127.0.0.1:8000/health` URL-t a szerver állapotának ellenőrzéséhez.
+_Megjegyzés:_ Ez minden kódváltoztatás után újraindítja a szervert, így azonnal láthatod a változtatások hatását.
+
+Nyisd meg a böngészőt, és látogasd meg a `http://127.0.0.1:8000/health` URL-t a szerver állapotának ellenőrzéséhez.
 
 5. **CORS beállítások**: Ha a frontend és a backend különböző url-eken fut, biztonsági okokból szükség van a CORS (Cross-Origin Resource Sharing) beállítására a FastAPI szerverben. Ha ez nem történik meg akkor a böngésző blokkolhatja a kéréseket. Ehhez telepítsd a `fastapi.middleware.cors` csomagot, és konfiguráld a CORS-t a `main.py` fájlban.
 
