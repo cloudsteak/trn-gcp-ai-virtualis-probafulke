@@ -94,7 +94,6 @@ async def virtual_try_on(
     )
 
     result = response.json()
-    print("Result from GCP Agent Platform:", result)
     return Response(
         base64.b64decode(result["predictions"][0]["bytesBase64Encoded"]),
         media_type="image/png",
