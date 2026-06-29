@@ -68,6 +68,8 @@ __pycache__/
 .Python
 .pytest_cache/
 .mypy_cache/
+Dockerfile
+.dockerignore
 ```
 
 3. **Backend kód finomhangolása**: A `main.py` fájlból távolítsd el a `print` utasítást, amely a GCP Agent Platform válaszát írja ki a konzolra. Ez nem szükséges a felhőben történő futtatáshoz, és a logokban is megjelenik.
